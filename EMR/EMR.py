@@ -18,13 +18,13 @@ cluster_list = emr.list_clusters(
 params = {
     #https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/emr.html#EMR.Client.run_job_flow
 }
-response = emr.run_job_flow(**params)
+emr.run_job_flow(**params)
 
 
 #####################################
 #   describe cluster
 #####################################
-response = emr.describe_cluster(
+emr.describe_cluster(
     ClusterId = "The identifier of the cluster to describe."
 )
 
@@ -32,10 +32,9 @@ response = emr.describe_cluster(
 #####################################
 #   Add steps
 #####################################
-step = {
-    #https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/emr.html#EMR.Client.add_job_flow_steps
-}
-response = emr.add_job_flow_steps(
+emr.add_job_flow_steps(
     JobFlowId = "A string that uniquely identifies the job flow. This identifier is returned by RunJobFlow and can also be obtained from ListClusters .",
-    Steps = [step]
+    Steps = [{
+    	#https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/emr.html#EMR.Client.add_job_flow_steps
+	}]
 )

@@ -2,7 +2,6 @@
 import boto3
 kinesis = boto3.client("kinesis")
 
-#データ送信
 kinesis.put_records(
     Records = [
         {
